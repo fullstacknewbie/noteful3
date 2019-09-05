@@ -1,0 +1,10 @@
+form {
+    color: lightgray;
+    margin-left: 50px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}

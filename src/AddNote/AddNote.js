@@ -1,13 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from '../App/App';
+//import ReactDOM from 'react-dom';
+//import App from '../App/App';
 import Config from '../config'
 import ApiContext from '../ApiContext'
+import './AddNote.css'
 
 class AddNote extends React.Component {
     static contextType = ApiContext;
-
     handleSubmit(e) {
+        e.preventDefault();
         const note = {
             id: e.target['folderId'].value,
             name: e.target['name'].value,
@@ -23,10 +24,10 @@ class AddNote extends React.Component {
           },
           body: JSON.stringify(note),
         })
-           .then(responseData => {
-             console.log(this.context);
-             this.context(responseData);
-           })
+           //.then(responseData => {
+             //console.log(this.context);
+             //this.context(responseData);
+           //})
     }
 
     render () {
