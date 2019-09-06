@@ -5,6 +5,12 @@ import Config from '../config'
 import ApiContext from '../ApiContext'
 import './AddNote.css'
 
+addNote = note => {
+    this.setState({
+        notes: [...this.state.notes,note]
+    })
+}
+
 class AddNote extends React.Component {
     static contextType = ApiContext;
     handleSubmit(e) {
@@ -24,10 +30,10 @@ class AddNote extends React.Component {
           },
           body: JSON.stringify(note),
         })
-           //.then(responseData => {
+           .then(note => {
              //console.log(this.context);
-             //this.context(responseData);
-           //})
+                this.context.addNote(note);
+           })
     }
 
     render () {
