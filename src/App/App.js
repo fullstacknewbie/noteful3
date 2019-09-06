@@ -96,6 +96,12 @@ class App extends Component {
         );
     }
 
+    addNote = note => {
+        this.setState({
+            notes: [...this.state.notes,note]
+        })
+    }
+
     render() {
         const value = {
             notes: this.state.notes,
